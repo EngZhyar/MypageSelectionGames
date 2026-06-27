@@ -55,9 +55,7 @@ function renderGames() {
 
             <div class="gameInfo">
 
-                <div class="gameTitle">
-                    ${getGameName(game.image)}
-                </div>
+                
 
                 <div class="gameSize">
                     ${game.size.toFixed(2)} GB
@@ -146,14 +144,13 @@ function updateSummary() {
 
     totalSize.innerText = total.toFixed(2) + " GB";
 
-    if (total <= 58.5) {
-
+    // Updated storage conditions
+    if (total <= 58.4) {
         storage.innerText = "Flash 64GB";
-
-    } else {
-
+    } else if (total > 58.4 && total < 463.9) {
         storage.innerText = "Hard 500GB";
-
+    } else if (total >= 463.9) {
+        storage.innerText = "یارە کەمکەوە";
     }
 
 }
