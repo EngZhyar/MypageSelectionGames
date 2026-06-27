@@ -150,7 +150,7 @@ function updateSummary() {
     } else if (total > 58.4 && total < 463.9) {
         storage.innerText = "Hard 500GB";
     } else if (total >= 463.9) {
-        storage.innerText = "یارە کەمکەوە";
+        storage.innerText = "یاری کەمکەوە";
     }
 
 }
