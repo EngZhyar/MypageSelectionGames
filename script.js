@@ -183,9 +183,9 @@ myGamesButton.addEventListener("click", function() {
         myGamesButton.textContent = "هەموو یاریەکان";
         myGamesButton.style.background = "#ff6b6b";
         // Hide only the boxes, not the buttons
-        infoBoxes.forEach(function(box) {
-            box.style.display = "none";
-        });
+     document.getElementById('selectedCount').parentElement.style.display = "none";
+    document.getElementById('storage').parentElement.style.display = "none";
+
     } else {
         myGamesButton.textContent = "ئەو یاریانەی دیاریکراون";
         myGamesButton.style.background = "#00d9ff";
