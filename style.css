@@ -102,7 +102,7 @@ button:hover {
     width: 95%;
     margin: 20px auto 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px 0 40px 0;
 }
@@ -154,49 +154,34 @@ button:hover {
     cursor: pointer;
 }
 
-@media(max-width:700px) {
-
-    .info {
-        padding: 12px 15px;
-        gap: 10px;
-        top: 72px;
-    }
-
-    .box {
-        padding: 10px 12px;
-    }
-
-    .box h3 {
-        font-size: 12px;
-    }
-
-    .box span {
-        font-size: 17px;
-    }
-
-    .buttons {
-        gap: 10px;
-        padding: 8px 0 0 0;
-    }
-
-    button {
-        padding: 8px 16px;
-        font-size: 13px;
-    }
-
+/* 3 columns on ALL devices - no changes needed */
+@media(max-width:1024px) {
     #gamesContainer {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        margin-top: 15px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
     }
+}
 
+@media(max-width:768px) {
+    #gamesContainer {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    
     .game img {
-        height: 210px;
+        height: 200px;
     }
+}
 
-    .gameTitle {
-        font-size: 14px;
+@media(max-width:600px) {
+    #gamesContainer {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
     }
-
+    
+    .game img {
+        height: 160px;
+    }
 }
 
 @media(max-width:450px) {
@@ -240,26 +225,62 @@ button:hover {
     #gamesContainer {
         grid-template-columns: repeat(3, 1fr);
         margin-top: 10px;
-        gap: 15px;
+        gap: 10px;
         padding: 15px 0 30px 0;
     }
 
     .game img {
-        height: 180px;
+        height: 130px;
     }
 
     .gameTitle {
-        font-size: 13px;
-        min-height: 35px;
+        font-size: 12px;
+        min-height: 30px;
     }
 
     .gameInfo {
-        padding: 10px;
+        padding: 8px;
     }
 
     .gameSize {
-        font-size: 13px;
-        margin-bottom: 8px;
+        font-size: 11px;
+        margin-bottom: 6px;
     }
 
+    .game input {
+        width: 16px;
+        height: 16px;
+    }
+
+}
+
+@media(max-width:380px) {
+    #gamesContainer {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding: 10px 0 20px 0;
+    }
+    
+    .game img {
+        height: 110px;
+    }
+
+    .gameTitle {
+        font-size: 11px;
+        min-height: 25px;
+    }
+
+    .gameInfo {
+        padding: 6px;
+    }
+
+    .gameSize {
+        font-size: 10px;
+        margin-bottom: 4px;
+    }
+
+    .game input {
+        width: 14px;
+        height: 14px;
+    }
 }
