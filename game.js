@@ -1,507 +1,507 @@
 const games = [
     {
         image: "assets/007 agent under fire.jpg",
-        size: 4.35
+        size: 3.74
     },
     {
         image: "assets/007 everything.jpg",
-        size: 3.20
+        size: 3.25
     },
     {
         image: "assets/007 night fire.jpg",
-        size: 4.87
-    },
-    {
-        image: "assets/007 quantam.jpg",
-        size: 3.62
-    },
-    {
-        image: "assets/007 russia.jpg",
-        size: 4.28
-    },
-    {
-        image: "assets/18 wheeler.jpg",
-        size: 3.51
-    },
-    {
-        image: "assets/24.jpg",
-        size: 4.76
-    },
-    {
-        image: "assets/25 to life.jpg",
-        size: 4.15
-    },
-    {
-        image: "assets/50 cent.jpg",
-        size: 3.89
-    },
-    {
-        image: "assets/ace combat 5.jpg",
-        size: 4.93
-    },
-    {
-        image: "assets/adnan w lina.jpg",
-        size: 3.74
-    },
-    {
-        image: "assets/age of empire.jpg",
-        size: 4.22
-    },
-    {
-        image: "assets/airborne troops.jpg",
-        size: 3.96
-    },
-    {
-        image: "assets/airforce delta strike.jpg",
-        size: 4.41
-    },
-    {
-        image: "assets/alone in the dark new nightmare.jpg",
-        size: 3.88
-    },
-    {
-        image: "assets/altered beast.jpg",
-        size: 4.34
-    },
-    {
-        image: "assets/army men rts.jpg",
-        size: 4.79
-    },
-    {
-        image: "assets/avatar burning.jpg",
-        size: 3.65
-    },
-    {
-        image: "assets/avatar inferno.jpg",
-        size: 4.52
-    },
-    {
-        image: "assets/bad boys.jpg",
-        size: 3.77
-    },
-    {
-        image: "assets/barbie horse.jpg",
-        size: 4.11
-    },
-    {
-        image: "assets/barnyard.jpg",
-        size: 4.68
-    },
-    {
-        image: "assets/batman begins.jpg",
-        size: 3.59
-    },
-    {
-        image: "assets/batman rise.jpg",
-        size: 4.23
-    },
-    {
-        image: "assets/batman veangence.jpg",
-        size: 4.06
-    },
-    {
-        image: "assets/bee.jpg",
-        size: 3.92
-    },
-    {
-        image: "assets/bekam.jpg",
-        size: 4.47
-    },
-    {
-        image: "assets/ben alien.jpg",
-        size: 4.38
-    },
-    {
-        image: "assets/ben protector.jpg",
-        size: 3.81
-    },
-    {
-        image: "assets/ben ultimate.jpg",
-        size: 4.94
-    },
-    {
-        image: "assets/ben vilgax.jpg",
-        size: 3.71
-    },
-    {
-        image: "assets/black.jpg",
-        size: 4.56
-    },
-    {
-        image: "assets/bolt.jpg",
-        size: 4.02
-    },
-    {
-        image: "assets/brother earned.jpg",
-        size: 3.68
-    },
-    {
-        image: "assets/brother road.jpg",
-        size: 4.85
-    },
-    {
-        image: "assets/bully.jpg",
-        size: 4.29
-    },
-    {
-        image: "assets/burnout 3.jpg",
-        size: 3.64
-    },
-    {
-        image: "assets/burnout dominator.jpg",
-        size: 4.17
-    },
-    {
-        image: "assets/burnout revenge.jpg",
-        size: 4.73
-    },
-    {
-        image: "assets/cabela north america.jpg",
-        size: 3.95
-    },
-    {
-        image: "assets/call of duty 1.jpg",
-        size: 4.44
-    },
-    {
-        image: "assets/call of duty 2.jpg",
-        size: 4.09
-    },
-    {
-        image: "assets/call of duty 3.jpg",
-        size: 4.81
-    },
-    {
-        image: "assets/call of duty 4.jpg",
-        size: 3.56
-    },
-    {
-        image: "assets/captain majid.jpg",
-        size: 4.32
-    },
-    {
-        image: "assets/cars matter.jpg",
-        size: 4.67
-    },
-    {
-        image: "assets/cars.jpg",
-        size: 3.87
-    },
-    {
-        image: "assets/casper ghost.jpg",
-        size: 4.14
-    },
-    {
-        image: "assets/casper scare school.jpg",
-        size: 4.52
-    },
-    {
-        image: "assets/casper spirit.jpg",
         size: 3.72
     },
     {
-        image: "assets/cat in the hat.jpg",
-        size: 4.08
+        image: "assets/007 quantam.jpg",
+        size: 4.35
     },
     {
-        image: "assets/cid the dummy.jpg",
-        size: 4.62
+        image: "assets/007 russia.jpg",
+        size: 4.30
     },
     {
-        image: "assets/cold fear.jpg",
-        size: 3.82
+        image: "assets/18 wheeler.jpg",
+        size: 0.60
     },
     {
-        image: "assets/commandos.jpg",
-        size: 4.37
-    },
-    {
-        image: "assets/contra.jpg",
+        image: "assets/24.jpg",
         size: 4.24
     },
     {
-        image: "assets/crash cortex.jpg",
-        size: 3.99
+        image: "assets/25 to life.jpg",
+        size: 1.79
     },
     {
-        image: "assets/crash mind.jpg",
-        size: 4.54
+        image: "assets/50 cent.jpg",
+        size: 5.94
     },
     {
-        image: "assets/crash nitro.jpg",
-        size: 4.69
-    },
-    {
-        image: "assets/crash tag.jpg",
-        size: 3.61
-    },
-    {
-        image: "assets/crash titans.jpg",
-        size: 4.49
-    },
-    {
-        image: "assets/crash twinstanty.jpg",
-        size: 4.78
-    },
-    {
-        image: "assets/crazy frog.jpg",
-        size: 3.58
-    },
-    {
-        image: "assets/crazy taxi.jpg",
-        size: 4.88
-    },
-    {
-        image: "assets/curious goerge.jpg",
-        size: 4.03
-    },
-    {
-        image: "assets/darkwatch.jpg",
-        size: 4.26
-    },
-    {
-        image: "assets/dbz 3.jpg",
-        size: 4.58
-    },
-    {
-        image: "assets/dbz inifinte.jpg",
-        size: 3.76
-    },
-    {
-        image: "assets/dead to rights 1.jpg",
-        size: 4.19
-    },
-    {
-        image: "assets/dead to rights 2.jpg",
-        size: 4.95
-    },
-    {
-        image: "assets/def jam ny.jpg",
-        size: 3.84
-    },
-    {
-        image: "assets/desert storm 1.jpg",
-        size: 4.45
-    },
-    {
-        image: "assets/desert storm 2.jpg",
-        size: 4.72
-    },
-    {
-        image: "assets/desney princces.jpg",
-        size: 3.66
-    },
-    {
-        image: "assets/destroy all humans 1.jpg",
+        image: "assets/ace combat 5.jpg",
         size: 4.13
     },
     {
-        image: "assets/destroy all humans 2.jpg",
-        size: 4.91
+        image: "assets/adnan w lina.jpg",
+        size: 3.64
     },
     {
-        image: "assets/dmc 1.jpg",
-        size: 4.33
+        image: "assets/age of empire.jpg",
+        size: 0.51
     },
     {
-        image: "assets/dmc 2.jpg",
-        size: 3.97
+        image: "assets/airborne troops.jpg",
+        size: 0.40
     },
     {
-        image: "assets/dora.jpg",
-        size: 4.48
+        image: "assets/airforce delta strike.jpg",
+        size: 1.59
     },
     {
-        image: "assets/downhill.jpg",
-        size: 4.02
+        image: "assets/alone in the dark new nightmare.jpg",
+        size: 4.16
     },
     {
-        image: "assets/driv3r.jpg",
-        size: 4.63
+        image: "assets/altered beast.jpg",
+        size: 1.98
     },
     {
-        image: "assets/driver parallel.jpg",
-        size: 3.74
+        image: "assets/army men rts.jpg",
+        size: 1.25
     },
     {
-        image: "assets/dynasty warriors 2.jpg",
-        size: 4.28
+        image: "assets/avatar burning.jpg",
+        size: 1.80
     },
     {
-        image: "assets/dynasty warriors 3.jpg",
-        size: 4.06
+        image: "assets/avatar inferno.jpg",
+        size: 2.12
     },
     {
-        image: "assets/dynasty warriors 3x.jpg",
-        size: 3.92
+        image: "assets/bad boys.jpg",
+        size: 3.11
     },
     {
-        image: "assets/dynasty warriors 4.jpg",
-        size: 4.51
+        image: "assets/barbie horse.jpg",
+        size: 1.49
     },
     {
-        image: "assets/dynasty warriors 4x.jpg",
-        size: 4.81
+        image: "assets/barnyard.jpg",
+        size: 1.92
     },
     {
-        image: "assets/dynasty warriors 5.jpg",
-        size: 3.58
+        image: "assets/batman begins.jpg",
+        size: 2.34
     },
     {
-        image: "assets/dynasty warriors 5E.jpg",
-        size: 4.39
+        image: "assets/batman rise.jpg",
+        size: 3.64
     },
     {
-        image: "assets/dynasty warriors 5x.jpg",
-        size: 4.78
+        image: "assets/batman veangence.jpg",
+        size: 0.68
     },
     {
-        image: "assets/dynasty warriors 6.jpg",
-        size: 3.63
+        image: "assets/bee.jpg",
+        size: 1.55
     },
     {
-        image: "assets/eragon.jpg",
-        size: 4.27
+        image: "assets/bekam.jpg",
+        size: 0.51
     },
     {
-        image: "assets/evil dead.jpg",
-        size: 4.59
+        image: "assets/ben alien.jpg",
+        size: 2.19
     },
     {
-        image: "assets/f1 carrear challenge.jpg",
-        size: 4.88
+        image: "assets/ben protector.jpg",
+        size: 3.16
     },
     {
-        image: "assets/f1 championship season 2000.jpg",
-        size: 3.78
-    },
-    {
-        image: "assets/f1 racing champion.jpg",
-        size: 4.15
-    },
-    {
-        image: "assets/fantastic 4 silver.jpg",
-        size: 4.42
-    },
-    {
-        image: "assets/fantastic 4.jpg",
-        size: 3.69
-    },
-    {
-        image: "assets/fifa 1.jpg",
-        size: 4.21
-    },
-    {
-        image: "assets/fifa 2.jpg",
-        size: 4.94
-    },
-    {
-        image: "assets/fifa 3.jpg",
-        size: 3.82
-    },
-    {
-        image: "assets/fifa 4.jpg",
-        size: 4.47
-    },
-    {
-        image: "assets/fifa 5.jpg",
-        size: 4.76
-    },
-    {
-        image: "assets/fifa 6.jpg",
-        size: 3.91
-    },
-    {
-        image: "assets/fifa 7.jpg",
-        size: 4.34
-    },
-    {
-        image: "assets/fifa 8.jpg",
-        size: 4.53
-    },
-    {
-        image: "assets/fifa 9.jpg",
-        size: 3.57
-    },
-    {
-        image: "assets/fifa 10.jpg",
-        size: 4.68
-    },
-    {
-        image: "assets/fifa 11.jpg",
-        size: 4.82
-    },
-    {
-        image: "assets/fifa 12.jpg",
-        size: 3.98
-    },
-    {
-        image: "assets/fifa 13.jpg",
-        size: 4.38
-    },
-    {
-        image: "assets/fifa 14.jpg",
+        image: "assets/ben ultimate.jpg",
         size: 4.11
     },
     {
-        image: "assets/flatout 1.jpg",
-        size: 4.61
+        image: "assets/ben vilgax.jpg",
+        size: 4.37
     },
     {
-        image: "assets/Flatout 2.jpg",
-        size: 3.86
+        image: "assets/black.jpg",
+        size: 3.64
     },
     {
-        image: "assets/flushed away.jpg",
-        size: 4.24
+        image: "assets/bolt.jpg",
+        size: 4.31
     },
     {
-        image: "assets/ford racing 2.jpg",
-        size: 4.49
+        image: "assets/brother earned.jpg",
+        size: 3.20
     },
     {
-        image: "assets/ford racing 3.jpg",
-        size: 4.74
+        image: "assets/brother road.jpg",
+        size: 2.91
     },
     {
-        image: "assets/formula one 04.jpg",
-        size: 3.67
+        image: "assets/bully.jpg",
+        size: 4.31
     },
     {
-        image: "assets/formula one 06.jpg",
-        size: 4.56
+        image: "assets/burnout 3.jpg",
+        size: 2.67
     },
     {
-        image: "assets/freedom fighter.jpg",
-        size: 4.18
+        image: "assets/burnout dominator.jpg",
+        size: 4.34
     },
     {
-        image: "assets/full spectrum.jpg",
-        size: 3.94
+        image: "assets/burnout revenge.jpg",
+        size: 3.40
     },
     {
-        image: "assets/G force.jpg",
-        size: 4.27
-    },
-    {
-        image: "assets/garfield lasgana.jpg",
-        size: 4.84
-    },
-    {
-        image: "assets/garfield.jpg",
-        size: 3.78
-    },
-    {
-        image: "assets/genji dawn of samurai.jpg",
-        size: 4.36
-    },
-    {
-        image: "assets/getaway black monday.jpg",
+        image: "assets/cabela north america.jpg",
         size: 4.14
     },
     {
+        image: "assets/call of duty 1.jpg",
+        size: 2.08
+    },
+    {
+        image: "assets/call of duty 2.jpg",
+        size: 2.72
+    },
+    {
+        image: "assets/call of duty 3.jpg",
+        size: 3.47
+    },
+    {
+        image: "assets/call of duty 4.jpg",
+        size: 2.59
+    },
+    {
+        image: "assets/captain majid.jpg",
+        size: 1.14
+    },
+    {
+        image: "assets/cars matter.jpg",
+        size: 3.14
+    },
+    {
+        image: "assets/cars.jpg",
+        size: 2.83
+    },
+    {
+        image: "assets/casper ghost.jpg",
+        size: 0.09
+    },
+    {
+        image: "assets/casper scare school.jpg",
+        size: 0.07
+    },
+    {
+        image: "assets/casper spirit.jpg",
+        size: 0.41
+    },
+    {
+        image: "assets/cat in the hat.jpg",
+        size: 2.12
+    },
+    {
+        image: "assets/cid the dummy.jpg",
+        size: 0.60
+    },
+    {
+        image: "assets/cold fear.jpg",
+        size: 3.31
+    },
+    {
+        image: "assets/commandos.jpg",
+        size: 2.97
+    },
+    {
+        image: "assets/contra.jpg",
+        size: 0.61
+    },
+    {
+        image: "assets/crash cortex.jpg",
+        size: 0.48
+    },
+    {
+        image: "assets/crash mind.jpg",
+        size: 1.87
+    },
+    {
+        image: "assets/crash nitro.jpg",
+        size: 2.94
+    },
+    {
+        image: "assets/crash tag.jpg",
+        size: 4.13
+    },
+    {
+        image: "assets/crash titans.jpg",
+        size: 3.05
+    },
+    {
+        image: "assets/crash twinstanty.jpg",
+        size: 2.38
+    },
+    {
+        image: "assets/crazy frog.jpg",
+        size: 0.42
+    },
+    {
+        image: "assets/crazy taxi.jpg",
+        size: 0.60
+    },
+    {
+        image: "assets/curious goerge.jpg",
+        size: 4.37
+    },
+    {
+        image: "assets/darkwatch.jpg",
+        size: 4.37
+    },
+    {
+        image: "assets/dbz 3.jpg",
+        size: 2.81
+    },
+    {
+        image: "assets/dbz inifinte.jpg",
+        size: 2.29
+    },
+    {
+        image: "assets/dead to rights 1.jpg",
+        size: 2.01
+    },
+    {
+        image: "assets/dead to rights 2.jpg",
+        size: 4.36
+    },
+    {
+        image: "assets/def jam ny.jpg",
+        size: 4.37
+    },
+    {
+        image: "assets/desert storm 1.jpg",
+        size: 3.93
+    },
+    {
+        image: "assets/desert storm 2.jpg",
+        size: 2.14
+    },
+    {
+        image: "assets/desney princces.jpg",
+        size: 3.90
+    },
+    {
+        image: "assets/destroy all humans 1.jpg",
+        size: 4.30
+    },
+    {
+        image: "assets/destroy all humans 2.jpg",
+        size: 4.19
+    },
+    {
+        image: "assets/dmc 1.jpg",
+        size: 4.37
+    },
+    {
+        image: "assets/dmc 2.jpg",
+        size: 8.75
+    },
+    {
+        image: "assets/dora.jpg",
+        size: 1.74
+    },
+    {
+        image: "assets/downhill.jpg",
+        size: 2.58
+    },
+    {
+        image: "assets/driv3r.jpg",
+        size: 3.82
+    },
+    {
+        image: "assets/driver parallel.jpg",
+        size: 3.60
+    },
+    {
+        image: "assets/dynasty warriors 2.jpg",
+        size: 0.52
+    },
+    {
+        image: "assets/dynasty warriors 3.jpg",
+        size: 2.82
+    },
+    {
+        image: "assets/dynasty warriors 3x.jpg",
+        size: 3.69
+    },
+    {
+        image: "assets/dynasty warriors 4.jpg",
+        size: 3.46
+    },
+    {
+        image: "assets/dynasty warriors 4x.jpg",
+        size: 3.41
+    },
+    {
+        image: "assets/dynasty warriors 5.jpg",
+        size: 3.45
+    },
+    {
+        image: "assets/dynasty warriors 5E.jpg",
+        size: 3.41
+    },
+    {
+        image: "assets/dynasty warriors 5x.jpg",
+        size: 4.06
+    },
+    {
+        image: "assets/dynasty warriors 6.jpg",
+        size: 7.15
+    },
+    {
+        image: "assets/eragon.jpg",
+        size: 2.57
+    },
+    {
+        image: "assets/evil dead.jpg",
+        size: 2.28
+    },
+    {
+        image: "assets/f1 carrear challenge.jpg",
+        size: 0.40
+    },
+    {
+        image: "assets/f1 championship season 2000.jpg",
+        size: 0.31
+    },
+    {
+        image: "assets/f1 racing champion.jpg",
+        size: 0.51
+    },
+    {
+        image: "assets/fantastic 4 silver.jpg",
+        size: 4.06
+    },
+    {
+        image: "assets/fantastic 4.jpg",
+        size: 3.37
+    },
+    {
+        image: "assets/fifa 1.jpg",
+        size: 0.43
+    },
+    {
+        image: "assets/fifa 2.jpg",
+        size: 4.03
+    },
+    {
+        image: "assets/fifa 3.jpg",
+        size: 2.54
+    },
+    {
+        image: "assets/fifa 4.jpg",
+        size: 2.60
+    },
+    {
+        image: "assets/fifa 5.jpg",
+        size: 4.37
+    },
+    {
+        image: "assets/fifa 6.jpg",
+        size: 4.37
+    },
+    {
+        image: "assets/fifa 7.jpg",
+        size: 4.37
+    },
+    {
+        image: "assets/fifa 8.jpg",
+        size: 4.35
+    },
+    {
+        image: "assets/fifa 9.jpg",
+        size: 4.37
+    },
+    {
+        image: "assets/fifa 10.jpg",
+        size: 4.37
+    },
+    {
+        image: "assets/fifa 11.jpg",
+        size: 4.37
+    },
+    {
+        image: "assets/fifa 12.jpg",
+        size: 4.37
+    },
+    {
+        image: "assets/fifa 13.jpg",
+        size: 4.37
+    },
+    {
+        image: "assets/fifa 14.jpg",
+        size: 4.37
+    },
+    {
+        image: "assets/flatout 1.jpg",
+        size: 1.23
+    },
+    {
+        image: "assets/Flatout 2.jpg",
+        size: 3.74
+    },
+    {
+        image: "assets/flushed away.jpg",
+        size: 1.70
+    },
+    {
+        image: "assets/ford racing 2.jpg",
+        size: 0.58
+    },
+    {
+        image: "assets/ford racing 3.jpg",
+        size: 0.59
+    },
+    {
+        image: "assets/formula one 04.jpg",
+        size: 1.64
+    },
+    {
+        image: "assets/formula one 06.jpg",
+        size: 4.11
+    },
+    {
+        image: "assets/freedom fighter.jpg",
+        size: 1.92
+    },
+    {
+        image: "assets/full spectrum.jpg",
+        size: 2.72
+    },
+    {
+        image: "assets/G force.jpg",
+        size: 4.00
+    },
+    {
+        image: "assets/garfield lasgana.jpg",
+        size: 0.40
+    },
+    {
+        image: "assets/garfield.jpg",
+        size: 0.52
+    },
+    {
+        image: "assets/genji dawn of samurai.jpg",
+        size: 3.90
+    },
+    {
+        image: "assets/getaway black monday.jpg",
+        size: 3.91
+    },
+    {
         image: "assets/Getaway.jpg",
-        size: 4.62
+        size: 4.18
     },
     {
         image: "assets/ghost recon advanced.jpg",
@@ -509,216 +509,214 @@ const games = [
     },
     {
         image: "assets/ghost rider.jpg",
-        size: 4.43
+        size: 2.45
     },
     {
         image: "assets/gladiator.jpg",
-        size: 4.28
+        size: 3.55
     },
     {
         image: "assets/god of war 1.jpg",
-        size: 3.96
+        size: 7.93
     },
     {
         image: "assets/god of war 2 kurdi.jpg",
-        size: 4.72
+        size: 7.94
     },
     {
         image: "assets/god of war 2.jpg",
-        size: 4.33
+        size: 7.94
     },
     {
         image: "assets/golden eye rogue.jpg",
-        size: 3.68
-    },
-    {
-        image: "assets/gradius v.jpg",
-        size: 4.51
-    },
-    {
-        image: "assets/GT 3.jpg",
-        size: 4.87
-    },
-    {
-        image: "assets/GT 4.jpg",
-        size: 3.74
-    },
-    {
-        image: "assets/GT 2000.jpg",
-        size: 4.29
-    },
-    {
-        image: "assets/gta 3.jpg",
-        size: 4.46
-    },
-    {
-        image: "assets/gta Faxir.png",
-        size: 4.73
-    },
-    {
-        image: "assets/gta liberty city.jpg",
-        size: 3.92
-    },
-    {
-        image: "assets/gta san andreas.jpeg",
-        size: 4.18
-    },
-    {
-        image: "assets/gta vice city stories.jpg",
-        size: 4.59
-    },
-    {
-        image: "assets/gta vice city.jpg",
-        size: 3.81
-    },
-    {
-        image: "assets/happy feet.jpg",
         size: 4.24
     },
     {
+        image: "assets/gradius v.jpg",
+        size: 0.37
+    },
+    {
+        image: "assets/GT 3.jpg",
+        size: 3.61
+    },
+    {
+        image: "assets/GT 4.jpg",
+        size: 4.94
+    },
+    {
+        image: "assets/GT 2000.jpg",
+        size: 0.15
+    },
+    {
+        image: "assets/gta 3.jpg",
+        size: 4.37
+    },
+    {
+        image: "assets/gta Faxir.png",
+        size: 3.38
+    },
+    {
+        image: "assets/gta liberty city.jpg",
+        size: 3.73
+    },
+    {
+        image: "assets/gta san andreas.jpeg",
+        size: 4.20
+    },
+    {
+        image: "assets/gta vice city stories.jpg",
+        size: 3.85
+    },
+    {
+        image: "assets/gta vice city.jpg",
+        size: 4.37
+    },
+    {
+        image: "assets/happy feet.jpg",
+        size: 1.17
+    },
+    {
         image: "assets/Harley race.jpg",
-        size: 4.68
+        size: 4.14
     },
     {
         image: "assets/harry chamber secret.jpg",
-        size: 3.65
+        size: 0.52
     },
     {
         image: "assets/harry goblet.jpg",
-        size: 4.13
-    },
-    {
-        image: "assets/harry half blood.jpg",
-        size: 4.52
-    },
-    {
-        image: "assets/harry phoniex.jpg",
-        size: 3.87
-    },
-    {
-        image: "assets/harvest moon save.jpg",
-        size: 4.41
-    },
-    {
-        image: "assets/harvest moon wonderfullk.jpg",
-        size: 4.76
-    },
-    {
-        image: "assets/history battle pacific.jpg",
-        size: 3.98
-    },
-    {
-        image: "assets/history battle rome.jpg",
-        size: 4.34
-    },
-    {
-        image: "assets/history civil war nation divided.jpg",
-        size: 4.63
-    },
-    {
-        image: "assets/history civil war secret mission.jpg",
-        size: 3.76
-    },
-    {
-        image: "assets/hitman 2.jpg",
-        size: 4.19
-    },
-    {
-        image: "assets/hitman blood money.jpg",
-        size: 4.85
-    },
-    {
-        image: "assets/hitman contract.jpg",
-        size: 3.69
-    },
-    {
-        image: "assets/home alone.jpg",
-        size: 4.38
-    },
-    {
-        image: "assets/hulk 2008.jpg",
-        size: 4.58
-    },
-    {
-        image: "assets/hulk ultimate.jpg",
-        size: 3.83
-    },
-    {
-        image: "assets/hulk.jpg",
-        size: 4.27
-    },
-    {
-        image: "assets/ice age 1.jpg",
-        size: 4.44
-    },
-    {
-        image: "assets/ice age 2.jpg",
-        size: 4.73
-    },
-    {
-        image: "assets/ice age 3.jpg",
         size: 3.94
     },
     {
+        image: "assets/harry half blood.jpg",
+        size: 4.33
+    },
+    {
+        image: "assets/harry phoniex.jpg",
+        size: 4.33
+    },
+    {
+        image: "assets/harvest moon save.jpg",
+        size: 0.07
+    },
+    {
+        image: "assets/harvest moon wonderfullk.jpg",
+        size: 1.19
+    },
+    {
+        image: "assets/history battle pacific.jpg",
+        size: 4.12
+    },
+    {
+        image: "assets/history battle rome.jpg",
+        size: 1.18
+    },
+    {
+        image: "assets/history civil war nation divided.jpg",
+        size: 1.16
+    },
+    {
+        image: "assets/history civil war secret mission.jpg",
+        size: 1.16
+    },
+    {
+        image: "assets/hitman 2.jpg",
+        size: 4.00
+    },
+    {
+        image: "assets/hitman blood money.jpg",
+        size: 2.93
+    },
+    {
+        image: "assets/hitman contract.jpg",
+        size: 4.05
+    },
+    {
+        image: "assets/home alone.jpg",
+        size: 0.05
+    },
+    {
+        image: "assets/hulk 2008.jpg",
+        size: 4.13
+    },
+    {
+        image: "assets/hulk ultimate.jpg",
+        size: 4.33
+    },
+    {
+        image: "assets/hulk.jpg",
+        size: 3.84
+    },
+    {
+        image: "assets/ice age 1.jpg",
+        size: 3.99
+    },
+    {
+        image: "assets/ice age 2.jpg",
+        size: 2.33
+    },
+    {
+        image: "assets/ice age 3.jpg",
+        size: 4.32
+    },
+    {
         image: "assets/ico.jpg",
-        size: 4.56
+        size: 0.51
     },
     {
         image: "assets/increadible.jpg",
-        size: 4.29
-    },
-    {
-        image: "assets/incredible rise.jpg",
-        size: 3.72
+        size: 1.57
     },
     {
         image: "assets/indiana jones staff king.jpg",
-        size: 4.17
+        size: 2.05
     },
     {
         image: "assets/iron man.jpg",
-        size: 4.83
+        size: 1.31
     },
     {
         image: "assets/jet li.jpg",
-        size: 3.89
+        size: 2.67
     },
     {
         image: "assets/jurasic hunter.jpg",
-        size: 4.45
+        size: 1.16
     },
     {
         image: "assets/kengo.jpg",
-        size: 4.62
+        size: 0.40
     },
     {
         image: "assets/killzone.jpg",
-        size: 3.77
+        size: 4.30
     },
     {
         image: "assets/king arthur.jpg",
-        size: 4.34
+        size: 2.62
     },
     {
         image: "assets/king kong.jpg",
-        size: 4.56
+        size: 1.21
     },
     {
         image: "assets/king route 66.jpg",
-        size: 3.65
+        size: 1.23
     },
     {
         image: "assets/legend of wrestling.jpg",
-        size: 4.21
+        size: 0.57
     },
     {
         image: "assets/lego batman.jpg",
-        size: 4.78
+        size: 2.00
     },
     {
         image: "assets/lego starwars.jpg",
-        size: 3.82
+        size: 1.74
     },
+
+    /*i am here */
     {
         image: "assets/loony acm.jpg",
         size: 4.39
