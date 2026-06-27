@@ -7,6 +7,8 @@ const storage = document.getElementById("storage");
 const clearButton = document.getElementById("clearSelection");
 const myGamesButton = document.getElementById("myGames");
 
+const infoBoxes = document.querySelectorAll(".box"); // Changed to select only boxes
+
 let selectedGames = [];
 let showOnlySelected = false;
 
@@ -94,7 +96,7 @@ function renderGames() {
     if (showOnlySelected && selectedGames.length === 0) {
         gamesContainer.innerHTML = `
             <div style="grid-column:1/-1;text-align:center;padding:50px;font-size:18px;color:#9ca3af;">
-                No games selected yet. Click on games to add them to your collection.
+                هیچ یاریەک دیاری نەکراوە. تکایە یاریەکان دابنێ بۆ کۆکردنەوە.
             </div>
         `;
     }
@@ -183,9 +185,17 @@ myGamesButton.addEventListener("click", function() {
     if (showOnlySelected) {
         myGamesButton.textContent = "هەموو یاریەکان";
         myGamesButton.style.background = "#ff6b6b";
+        // Hide only the boxes, not the buttons
+        infoBoxes.forEach(function(box) {
+            box.style.display = "none";
+        });
     } else {
-        myGamesButton.textContent = " ئەو یاریانەی دیاریکراون";
+        myGamesButton.textContent = "ئەو یاریانەی دیاریکراون";
         myGamesButton.style.background = "#00d9ff";
+        // Show the boxes again
+        infoBoxes.forEach(function(box) {
+            box.style.display = "block";
+        });
     }
 
     renderGames();
