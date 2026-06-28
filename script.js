@@ -7,8 +7,6 @@ const storage = document.getElementById("storage");
 const clearButton = document.getElementById("clearSelection");
 const myGamesButton = document.getElementById("myGames");
 
-const infoBoxes = document.querySelectorAll(".box"); // Changed to select only boxes
-
 let selectedGames = [];
 let showOnlySelected = false;
 
@@ -124,7 +122,10 @@ function toggleGame(image) {
 
 function updateSummary() {
 
-    selectedCount.innerText = selectedGames.length;
+    // Update selected count if element exists
+    if (selectedCount) {
+        selectedCount.innerText = selectedGames.length;
+    }
 
     let total = 0;
 
@@ -142,7 +143,36 @@ function updateSummary() {
 
     });
 
-    totalSize.innerText = total.toFixed(2) + " GB";
+   
+
+    // Update progress bar with two-stage growth
+    const progressBar = document.getElementById('progressBar');
+    if (progressBar) {
+        let percentage = 0;
+        
+        // First stage: 0 to 58.4 GB (Flash 64GB)
+        if (total <= 58.4) {
+            percentage = (total / 58.4) * 100;
+            progressBar.style.background = 'linear-gradient(90deg, #00d9ff, #00ff87)';
+        } 
+        // Second stage: 58.4 to 463.9 GB (Hard 500GB)
+        else if (total > 58.4 && total < 463.9) {
+            // Reset to 0 and grow again from 58.4 to 463.9
+            const secondStageTotal = total - 58.4;
+            const secondStageMax = 463.9 - 58.4;
+            percentage = (secondStageTotal / secondStageMax) * 100;
+            progressBar.style.background = 'linear-gradient(90deg, #ffd93d, #ff9a44)';
+        } 
+        // Third stage: 463.9+ GB (Warning)
+        else if (total >= 463.9) {
+            percentage = 100;
+            progressBar.style.background = 'linear-gradient(90deg, #ff6b6b, #ff4444)';
+        }
+        
+        // Ensure percentage doesn't exceed 100
+        if (percentage > 100) percentage = 100;
+        progressBar.style.width = percentage + '%';
+    }
 
     // Updated storage conditions
     if (total <= 58.4) {
@@ -150,7 +180,7 @@ function updateSummary() {
     } else if (total > 58.4 && total < 463.9) {
         storage.innerText = "Hard 500GB";
     } else if (total >= 463.9) {
-        storage.innerText = "یاری کەمکەوە";
+        storage.innerText = "یارە کەمکەوە";
     }
 
 }
@@ -182,23 +212,26 @@ myGamesButton.addEventListener("click", function() {
     if (showOnlySelected) {
         myGamesButton.textContent = "هەموو یاریەکان";
         myGamesButton.style.background = "#ff6b6b";
-        // Hide only the boxes, not the buttons
-     document.getElementById('selectedCount').parentElement.style.display = "none";
-    document.getElementById('storage').parentElement.style.display = "none";
-
+        
+        // Hide storage box when showing selected games
+        const storageBox = document.querySelector('.box:not(.line-style)');
+        if (storageBox) {
+        }
     } else {
         myGamesButton.textContent = "ئەو یاریانەی دیاریکراون";
         myGamesButton.style.background = "#00d9ff";
-        // Show the boxes again
-        infoBoxes.forEach(function(box) {
-            box.style.display = "block";
-        });
+        
+        // Show storage box again
+        const storageBox = document.querySelector('.box:not(.line-style)');
+        if (storageBox) {
+            storageBox.style.display = "block";
+        }
     }
 
     renderGames();
 
 });
 
+// Initial render
 updateSummary();
-
 renderGames();
