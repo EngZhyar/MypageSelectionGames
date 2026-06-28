@@ -27,8 +27,10 @@ header h1 {
 }
 
 .info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 15px;
     padding: 15px 20px;
     background: #111827;
@@ -39,6 +41,15 @@ header h1 {
     transition: all 0.3s ease;
 }
 
+/* Wrapper for the two boxes - ALWAYS side by side */
+.box-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 2;
+    min-width: 300px;
+}
+
 .box {
     background: #1f2937;
     border-radius: 10px;
@@ -46,6 +57,63 @@ header h1 {
     text-align: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, .25);
     transition: all 0.3s ease;
+}
+
+/* Progress bar container */
+.box.line-style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 8px;
+    min-width: 200px;
+    flex: 1;
+}
+
+
+.progress-container {
+    position: relative;
+    width: 100%;
+    height: 28px;
+    background: #1f2937;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #374151;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00d9ff, #00ff87);
+    border-radius: 14px;
+    transition: width 0.5s ease;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.progress-container span {
+    font-size: 16px;
+    color: #00d9ff;
+    font-weight: bold;
+    min-width: 70px;
+    text-align: right;
 }
 
 .box.hidden {
@@ -64,14 +132,20 @@ header h1 {
     font-weight: bold;
 }
 
+/* Storage box - make it smaller */
+.box:not(.line-style) {
+    flex: 0.5;
+    min-width: 150px;
+    padding: 12px 15px;
+}
+
 .buttons {
     text-align: center;
     display: flex;
     justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
-    padding: 10px 0 0 0;
-    grid-column: 1 / -1;
+    padding: 0;
 }
 
 button {
@@ -171,6 +245,44 @@ button:hover {
     .game img {
         height: 200px;
     }
+
+    /* Keep boxes side by side on tablet */
+    .box-wrapper {
+        flex-direction: row;
+        width: 100%;
+        min-width: auto;
+        gap: 10px;
+        flex-wrap: nowrap;
+    }
+
+    .box.line-style {
+        flex: 2;
+        min-width: auto;
+        width: auto;
+        padding: 6px 15px;
+    }
+
+    .box.line-style .progress-container {
+        min-width: auto;
+    }
+
+    .box:not(.line-style) {
+        flex: 1;
+        min-width: auto;
+        width: auto;
+        padding: 8px 12px;
+    }
+
+    .info {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .buttons {
+        width: auto;
+    }
 }
 
 @media(max-width:600px) {
@@ -181,6 +293,46 @@ button:hover {
     
     .game img {
         height: 160px;
+    }
+
+    /* Keep boxes side by side on mobile */
+    .box-wrapper {
+        flex-direction: row;
+        gap: 8px;
+        flex-wrap: nowrap;
+        min-width: auto;
+        width: 100%;
+    }
+
+    .box.line-style {
+        flex: 2;
+        min-width: auto;
+        padding: 5px 10px;
+    }
+
+    .box.line-style .progress-container {
+        min-width: auto;
+        height: 22px;
+    }
+
+    .box:not(.line-style) {
+        flex: 1;
+        min-width: auto;
+        padding: 6px 8px;
+    }
+
+    .box:not(.line-style) h3 {
+        font-size: 10px;
+        margin-bottom: 3px;
+    }
+
+    .box:not(.line-style) span {
+        font-size: 14px;
+    }
+
+    .progress-container span {
+        font-size: 13px;
+        min-width: 55px;
     }
 }
 
@@ -198,71 +350,74 @@ button:hover {
         padding: 10px 12px;
         gap: 8px;
         top: 62px;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
-    .box h3 {
-        font-size: 11px;
-    }
-
-    .box span {
-        font-size: 15px;
+    .box-wrapper {
+        flex-direction: row;
+        gap: 6px;
+        flex-wrap: nowrap;
+        min-width: auto;
+        width: 100%;
     }
 
     .box {
-        padding: 8px 10px;
+        padding: 6px 8px;
+    }
+
+    .box.line-style {
+        padding: 4px 8px;
+        gap: 4px;
+        flex: 2;
+        min-width: auto;
+    }
+
+    .progress-container {
+        height: 18px;
+    }
+
+    .progress-container span {
+        font-size: 11px;
+        min-width: 45px;
+    }
+
+    .box:not(.line-style) {
+        flex: 1;
+        min-width: auto;
+        padding: 4px 6px;
+    }
+
+    .box:not(.line-style) h3 {
+        font-size: 9px;
+        margin-bottom: 2px;
+    }
+
+    .box:not(.line-style) span {
+        font-size: 12px;
     }
 
     .buttons {
-        gap: 8px;
-        padding: 6px 0 0 0;
+        gap: 6px;
+        padding: 4px 0 0 0;
+        width: 100%;
+        justify-content: center;
     }
 
     button {
-        padding: 7px 14px;
-        font-size: 12px;
+        padding: 6px 12px;
+        font-size: 11px;
     }
 
     #gamesContainer {
         grid-template-columns: repeat(3, 1fr);
         margin-top: 10px;
-        gap: 10px;
-        padding: 15px 0 30px 0;
-    }
-
-    .game img {
-        height: 130px;
-    }
-
-    .gameTitle {
-        font-size: 12px;
-        min-height: 30px;
-    }
-
-    .gameInfo {
-        padding: 8px;
-    }
-
-    .gameSize {
-        font-size: 11px;
-        margin-bottom: 6px;
-    }
-
-    .game input {
-        width: 16px;
-        height: 16px;
-    }
-
-}
-
-@media(max-width:380px) {
-    #gamesContainer {
-        grid-template-columns: repeat(3, 1fr);
         gap: 8px;
         padding: 10px 0 20px 0;
     }
-    
+
     .game img {
-        height: 110px;
+        height: 120px;
     }
 
     .gameTitle {
@@ -282,5 +437,80 @@ button:hover {
     .game input {
         width: 14px;
         height: 14px;
+    }
+
+}
+
+@media(max-width:380px) {
+    #gamesContainer {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+        padding: 8px 0 15px 0;
+    }
+    
+    .game img {
+        height: 100px;
+    }
+
+    .gameTitle {
+        font-size: 10px;
+        min-height: 20px;
+    }
+
+    .gameInfo {
+        padding: 4px;
+    }
+
+    .gameSize {
+        font-size: 9px;
+        margin-bottom: 3px;
+    }
+
+    .game input {
+        width: 12px;
+        height: 12px;
+    }
+
+    .box-wrapper {
+        flex-direction: row;
+        gap: 4px;
+        flex-wrap: nowrap;
+    }
+
+    .box.line-style {
+        padding: 3px 6px;
+        flex: 2;
+    }
+
+    .progress-container {
+        height: 16px;
+    }
+
+    .progress-container span {
+        font-size: 10px;
+        min-width: 40px;
+    }
+
+    .box:not(.line-style) {
+        padding: 3px 5px;
+        flex: 1;
+    }
+
+    .box:not(.line-style) h3 {
+        font-size: 8px;
+        margin-bottom: 1px;
+    }
+
+    .box:not(.line-style) span {
+        font-size: 10px;
+    }
+
+    .buttons {
+        gap: 4px;
+    }
+
+    button {
+        padding: 4px 10px;
+        font-size: 10px;
     }
 }
