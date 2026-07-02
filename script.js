@@ -143,45 +143,54 @@ function updateSummary() {
 
     });
 
-   
-
-    // Update progress bar with two-stage growth
-    const progressBar = document.getElementById('progressBar');
-    if (progressBar) {
-        let percentage = 0;
-        
-        // First stage: 0 to 58.4 GB (Flash 64GB)
-        if (total <= 58.4) {
-            percentage = (total / 58.4) * 100;
-            progressBar.style.background = 'linear-gradient(90deg, #00d9ff, #00ff87)';
-        } 
-        // Second stage: 58.4 to 463.9 GB (Hard 500GB)
-        else if (total > 58.4 && total < 463.9) {
-            // Reset to 0 and grow again from 58.4 to 463.9
-            const secondStageTotal = total - 58.4;
-            const secondStageMax = 463.9 - 58.4;
-            percentage = (secondStageTotal / secondStageMax) * 100;
-            progressBar.style.background = 'linear-gradient(90deg, #ffd93d, #ff9a44)';
-        } 
-        // Third stage: 463.9+ GB (Warning)
-        else if (total >= 463.9) {
-            percentage = 100;
-            progressBar.style.background = 'linear-gradient(90deg, #ff6b6b, #ff4444)';
-        }
-        
-        // Ensure percentage doesn't exceed 100
-        if (percentage > 100) percentage = 100;
-        progressBar.style.width = percentage + '%';
-    }
-
-    // Updated storage conditions
+// Update progress bar with two-stage growth
+const progressBar = document.getElementById('progressBar');
+if (progressBar) {
+    let percentage = 0;
+    
+    // First stage: 0 to 58.4 GB (Flash 64GB)
     if (total <= 58.4) {
-        storage.innerText = "Flash 64GB";
-    } else if (total > 58.4 && total < 463.9) {
-        storage.innerText = "Hard 500GB";
-    } else if (total >= 463.9) {
-        storage.innerText = "یاری کەمکەوە";
+        percentage = (total / 58.4) * 100;
+        progressBar.style.background = 'linear-gradient(90deg, #00d9ff, #00ff87)';
+    } 
+    // Second stage: 58.4 to 116 GB (2 Flash 64GB)
+    else if (total > 58.4 && total <= 116) {
+        const secondStageTotal = total - 58.4;
+        const secondStageMax = 116 - 58.4;
+        percentage = (secondStageTotal / secondStageMax) * 100;
+        progressBar.style.background = 'linear-gradient(90deg, #00d9ff, #00ff87)';
     }
+    // Third stage: 116 to 463.9 GB (Hard 500GB)
+    else if (total > 116 && total < 463.9) {
+        const thirdStageTotal = total - 116;
+        const thirdStageMax = 463.9 - 116;
+        percentage = (thirdStageTotal / thirdStageMax) * 100;
+        progressBar.style.background = 'linear-gradient(90deg, #ffd93d, #ff9a44)';
+    } 
+    // Fourth stage: 463.9+ GB (Warning)
+    else if (total >= 463.9) {
+        percentage = 100;
+        progressBar.style.background = 'linear-gradient(90deg, #ff6b6b, #ff4444)';
+    }
+    
+    // Ensure percentage doesn't exceed 100
+    if (percentage > 100) percentage = 100;
+    progressBar.style.width = percentage + '%';
+}
+
+// Updated storage conditions
+if (total <= 58.4) {
+    storage.innerText = "Flash 64GB";
+} 
+else if (total > 58.4 && total <= 116) {
+    storage.innerText = "2 Flash 64GB";
+}
+else if (total > 116 && total < 463.9) {
+    storage.innerText = "Hard 500GB";
+} 
+else if (total >= 463.9) {
+    storage.innerText = "یارە کەمکەوە";
+}
 
 }
 
@@ -213,13 +222,33 @@ myGamesButton.addEventListener("click", function() {
         myGamesButton.textContent = "هەموو یاریەکان";
         myGamesButton.style.background = "#ff6b6b";
         
+        // Calculate total size of selected games
+        let totalSelectedSize = 0;
+        selectedGames.forEach(function(image) {
+            const game = games.find(function(g) {
+                return g.image === image;
+            });
+            if (game) {
+                totalSelectedSize += Number(game.size);
+            }
+        });
+        
+        // Update clear button to show count and total size
+        clearButton.textContent = `${selectedGames.length}-${totalSelectedSize.toFixed(1)}GB`;
+        clearButton.style.background = "#ffd93d";
+        
         // Hide storage box when showing selected games
         const storageBox = document.querySelector('.box:not(.line-style)');
         if (storageBox) {
+            storageBox.style.display = "none";
         }
     } else {
         myGamesButton.textContent = "ئەو یاریانەی دیاریکراون";
         myGamesButton.style.background = "#00d9ff";
+        
+        // Reset clear button to original text
+        clearButton.textContent = "لابردنی یاریە دیاریکراوەکان";
+        clearButton.style.background = "#00d9ff";
         
         // Show storage box again
         const storageBox = document.querySelector('.box:not(.line-style)');
