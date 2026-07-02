@@ -864,6 +864,10 @@ const games = [
         image: "assets/mortal kombat deception.jpg",
         size: 4.37
     },
+       {
+        image: "assets/mortal kombat shaolin monks.jpg",
+        size: 3.25
+    },
     {
         image: "assets/moto gp3.jpg",
         size: 2.75
