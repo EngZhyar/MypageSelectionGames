@@ -336,6 +336,17 @@ button:hover {
     }
 }
 
+@media(min-width:700px){
+
+  #gamesContainer {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 6px;
+        padding: 8px 0 15px 0;
+    }
+}
+
+
+
 @media(max-width:450px) {
 
     header h1 {
