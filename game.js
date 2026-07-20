@@ -1590,14 +1590,6 @@ const games = [
         size: 2.28
     },
     {
-        image: "assets/wwe 2k22.jpg",
-        size: 4.26
-    },
-    {
-        image: "assets/wwe 2k23.jpg",
-        size: 3.55
-    },
-    {
         image: "assets/wwe 2009.jpg",
         size: 3.67
     },
@@ -1608,10 +1600,6 @@ const games = [
     {
         image: "assets/wwe 2011.jpg",
         size: 3.22
-    },
-    {
-        image: "assets/wwe 2024.jpg",
-        size: 3.52
     },
     {
         image: "assets/wwe all stars.jpg",
