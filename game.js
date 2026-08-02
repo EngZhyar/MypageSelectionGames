@@ -504,10 +504,6 @@ const games = [
         size: 4.18
     },
     {
-        image: "assets/ghost recon advanced.jpg",
-        size: 3.85
-    },
-    {
         image: "assets/ghost rider.jpg",
         size: 2.45
     },
