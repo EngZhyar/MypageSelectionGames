@@ -143,54 +143,40 @@ function updateSummary() {
 
     });
 
-// Update progress bar with two-stage growth
-const progressBar = document.getElementById('progressBar');
-if (progressBar) {
-    let percentage = 0;
-    
-    // First stage: 0 to 58.4 GB (Flash 64GB)
-    if (total <= 58.4) {
-        percentage = (total / 58.4) * 100;
-        progressBar.style.background = 'linear-gradient(90deg, #00d9ff, #00ff87)';
-    } 
-    // Second stage: 58.4 to 116 GB (2 Flash 64GB)
-    else if (total > 58.4 && total <= 116) {
-        const secondStageTotal = total - 58.4;
-        const secondStageMax = 116 - 58.4;
-        percentage = (secondStageTotal / secondStageMax) * 100;
-        progressBar.style.background = 'linear-gradient(90deg, #00d9ff, #00ff87)';
+    // Update progress bar with two-stage growth for 500GB
+    const progressBar = document.getElementById('progressBar');
+    if (progressBar) {
+        let percentage = 0;
+        
+        // First stage: 0 to 350GB (Safe zone)
+        if (total <= 350) {
+            percentage = (total / 350) * 100;
+            progressBar.style.background = 'linear-gradient(90deg, #00d9ff, #00ff87)';
+        } 
+        // Second stage: 350 to 463.9GB (Warning zone)
+        else if (total > 350 && total < 463.9) {
+            const secondStageTotal = total - 350;
+            const secondStageMax = 463.9 - 350;
+            percentage = (secondStageTotal / secondStageMax) * 100;
+            progressBar.style.background = 'linear-gradient(90deg, #ffd93d, #ff9a44)';
+        } 
+        // Third stage: 463.9+ GB (Danger zone)
+        else if (total >= 463.9) {
+            percentage = 100;
+            progressBar.style.background = 'linear-gradient(90deg, #ff6b6b, #ff4444)';
+        }
+        
+        // Ensure percentage doesn't exceed 100
+        if (percentage > 100) percentage = 100;
+        progressBar.style.width = percentage + '%';
     }
-    // Third stage: 116 to 463.9 GB (Hard 500GB)
-    else if (total > 116 && total < 463.9) {
-        const thirdStageTotal = total - 116;
-        const thirdStageMax = 463.9 - 116;
-        percentage = (thirdStageTotal / thirdStageMax) * 100;
-        progressBar.style.background = 'linear-gradient(90deg, #ffd93d, #ff9a44)';
-    } 
-    // Fourth stage: 463.9+ GB (Warning)
-    else if (total >= 463.9) {
-        percentage = 100;
-        progressBar.style.background = 'linear-gradient(90deg, #ff6b6b, #ff4444)';
-    }
-    
-    // Ensure percentage doesn't exceed 100
-    if (percentage > 100) percentage = 100;
-    progressBar.style.width = percentage + '%';
-}
 
-// Updated storage conditions
-if (total <= 58.4) {
-    storage.innerText = "Flash 64GB";
-} 
-else if (total > 58.4 && total <= 116) {
-    storage.innerText = "2 Flash 64GB";
-}
-else if (total > 116 && total < 463.9) {
-    storage.innerText = "Hard 500GB";
-} 
-else if (total >= 463.9) {
-    storage.innerText = "یارە کەمکەوە";
-}
+    // Updated storage conditions - only 500GB
+    if (total < 463.9) {
+        storage.innerText = "Hard 500GB";
+    } else if (total >= 463.9) {
+        storage.innerText = "یارە کەمکەوە";
+    }
 
 }
 
