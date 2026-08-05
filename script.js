@@ -172,10 +172,10 @@ function updateSummary() {
     }
 
     // Updated storage conditions - only 500GB
-    if (total < 463.9) {
+    if (total < 464.7) {
         storage.innerText = "Hard 500GB";
-    } else if (total >= 463.9) {
-        storage.innerText = "یارە کەمکەوە";
+    } else if (total >= 464.7) {
+        storage.innerText = "یاری کەمکەوە";
     }
 
 }
