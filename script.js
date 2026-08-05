@@ -220,7 +220,7 @@ myGamesButton.addEventListener("click", function() {
         });
         
         // Update clear button to show count and total size
-        clearButton.textContent = `${selectedGames.length}-${totalSelectedSize.toFixed(1)}GB`;
+        clearButton.textContent = `${selectedGames.length}-${totalSelectedSize.toFixed(1)}`;
         clearButton.style.background = "#ffd93d";
         
         // Hide storage box when showing selected games
