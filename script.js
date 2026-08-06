@@ -148,20 +148,15 @@ function updateSummary() {
     if (progressBar) {
         let percentage = 0;
         
-        // First stage: 0 to 350GB (Safe zone)
-        if (total <= 350) {
-            percentage = (total / 350) * 100;
-            progressBar.style.background = 'linear-gradient(90deg, #00d9ff, #00ff87)';
-        } 
-        // Second stage: 350 to 463.9GB (Warning zone)
-        else if (total > 350 && total < 463.9) {
+
+        if ( total <= 463.9) {
             const secondStageTotal = total - 350;
             const secondStageMax = 463.9 - 350;
             percentage = (secondStageTotal / secondStageMax) * 100;
             progressBar.style.background = 'linear-gradient(90deg, #ffd93d, #ff9a44)';
         } 
         // Third stage: 463.9+ GB (Danger zone)
-        else if (total >= 463.9) {
+        else if (total > 463.9) {
             percentage = 100;
             progressBar.style.background = 'linear-gradient(90deg, #ff6b6b, #ff4444)';
         }
