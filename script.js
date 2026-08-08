@@ -9,27 +9,35 @@ const myGamesButton = document.getElementById("myGames");
 
 let selectedGames = [];
 let showOnlySelected = false;
+const WARNING_THRESHOLD = 494;
 
 function getGameName(path) {
-
     let name = path.split("/").pop();
-
     name = name.substring(0, name.lastIndexOf("."));
-
     name = name.replace(/[_-]/g, " ");
-
     return name.replace(/\b\w/g, function(letter) {
         return letter.toUpperCase();
     });
+}
 
+function getTotalSelectedSize() {
+    let total = 0;
+    selectedGames.forEach(function(image) {
+        const game = games.find(function(g) {
+            return g.image === image;
+        });
+        if (game) {
+            total += Number(game.size);
+        }
+    });
+    return total;
 }
 
 function renderGames() {
-
     gamesContainer.innerHTML = "";
+    const totalSelectedSize = getTotalSelectedSize();
 
     let gamesToShow = games;
-
     if (showOnlySelected) {
         gamesToShow = games.filter(function(game) {
             return selectedGames.includes(game.image);
@@ -37,58 +45,50 @@ function renderGames() {
     }
 
     gamesToShow.forEach(function(game) {
-
         const card = document.createElement("div");
-
         card.className = "game";
 
-        if (selectedGames.includes(game.image))
-            card.classList.add("selected");
+        const isSelected = selectedGames.includes(game.image);
+        if (isSelected) card.classList.add("selected");
 
-        const checked = selectedGames.includes(game.image) ? "checked" : "";
+        const canSelect = (totalSelectedSize + game.size <= WARNING_THRESHOLD) || isSelected;
+        const isDisabled = !canSelect && !isSelected;
+
+        const checked = isSelected ? "checked" : "";
 
         card.innerHTML = `
-
             <img src="${game.image}" loading="lazy">
-
             <div class="gameInfo">
-
-                
-
                 <div class="gameSize">
                     ${game.size.toFixed(2)} GB
                 </div>
-
                 <input
                     type="checkbox"
                     ${checked}
+                    ${isDisabled ? 'disabled' : ''}
                 >
-
+                ${isDisabled ? '<div class="storage-full-tag">پڕە</div>' : ''}
             </div>
-
         `;
 
         const checkbox = card.querySelector("input");
 
         checkbox.addEventListener("click", function(e) {
-
             e.stopPropagation();
-
-            toggleGame(game.image);
-
+            if (!this.disabled) {
+                toggleGame(game.image);
+            }
         });
 
         card.addEventListener("click", function() {
-
-            toggleGame(game.image);
-
+            if (!isDisabled) {
+                toggleGame(game.image);
+            }
         });
 
         gamesContainer.appendChild(card);
-
     });
 
-    // If showing only selected and no games are selected, show a message
     if (showOnlySelected && selectedGames.length === 0) {
         gamesContainer.innerHTML = `
             <div style="grid-column:1/-1;text-align:center;padding:50px;font-size:18px;color:#9ca3af;">
@@ -96,129 +96,89 @@ function renderGames() {
             </div>
         `;
     }
-
 }
 
-
 function toggleGame(image) {
+    const totalSelectedSize = getTotalSelectedSize();
+    const game = games.find(function(g) {
+        return g.image === image;
+    });
+
+    if (!game) return;
 
     if (selectedGames.includes(image)) {
-
         selectedGames = selectedGames.filter(function(item) {
             return item !== image;
         });
-
     } else {
-
-        selectedGames.push(image);
-
+        if (totalSelectedSize + game.size <= WARNING_THRESHOLD) {
+            selectedGames.push(image);
+        } else {
+            alert(`ناتوانیت ئەم یاریە زیاد بکەیت! بۆشایی پڕە`);
+            return;
+        }
     }
 
     updateSummary();
-
     renderGames();
-
 }
 
 function updateSummary() {
-
-    // Update selected count if element exists
     if (selectedCount) {
         selectedCount.innerText = selectedGames.length;
     }
 
-    let total = 0;
+    const total = getTotalSelectedSize();
 
-    selectedGames.forEach(function(image) {
-
-        const game = games.find(function(g) {
-            return g.image === image;
-        });
-
-        if (game) {
-
-            total += Number(game.size);
-
-        }
-
-    });
-
-    // Update progress bar with two-stage growth for 500GB
     const progressBar = document.getElementById('progressBar');
     if (progressBar) {
-        let percentage = 0;
+        let percentage = (total / WARNING_THRESHOLD) * 100;
         
-
-        if ( total <= 463.9) {
-            const secondStageTotal = total - 350;
-            const secondStageMax = 463.9 - 350;
-            percentage = (secondStageTotal / secondStageMax) * 100;
-            progressBar.style.background = 'linear-gradient(90deg, #ffd93d, #ff9a44)';
-        } 
-        // Third stage: 463.9+ GB (Danger zone)
-        else if (total > 463.9) {
+        if (total <= WARNING_THRESHOLD) {
+            progressBar.style.background = 'linear-gradient(90deg, #4CAF50, #8BC34A)';
+        } else {
             percentage = 100;
             progressBar.style.background = 'linear-gradient(90deg, #ff6b6b, #ff4444)';
         }
         
-        // Ensure percentage doesn't exceed 100
         if (percentage > 100) percentage = 100;
+        if (percentage < 0) percentage = 0;
         progressBar.style.width = percentage + '%';
     }
 
-    // Updated storage conditions - only 500GB
-    if (total < 464.7) {
+    // Just 2 states
+    if (total < WARNING_THRESHOLD) {
         storage.innerText = "Hard 500GB";
-    } else if (total >= 464.7) {
-        storage.innerText = "یاری کەمکەوە";
+    } else {
+        storage.innerText = "پڕە";
     }
-
 }
 
 clearButton.addEventListener("click", function() {
-
     selectedGames = [];
 
-    // If we're in "My Games" mode, stay in it but show empty state
     if (showOnlySelected) {
         renderGames();
     }
 
     updateSummary();
 
-    // Re-render to update checkbox states
     if (!showOnlySelected) {
         renderGames();
     }
-
 });
 
 myGamesButton.addEventListener("click", function() {
-
-    // Toggle the mode
     showOnlySelected = !showOnlySelected;
 
-    // Update button text to show current state
     if (showOnlySelected) {
         myGamesButton.textContent = "هەموو یاریەکان";
         myGamesButton.style.background = "#ff6b6b";
         
-        // Calculate total size of selected games
-        let totalSelectedSize = 0;
-        selectedGames.forEach(function(image) {
-            const game = games.find(function(g) {
-                return g.image === image;
-            });
-            if (game) {
-                totalSelectedSize += Number(game.size);
-            }
-        });
-        
-        // Update clear button to show count and total size
+        let totalSelectedSize = getTotalSelectedSize();
         clearButton.textContent = `${selectedGames.length}-${totalSelectedSize.toFixed(1)}`;
         clearButton.style.background = "#ffd93d";
         
-        // Hide storage box when showing selected games
         const storageBox = document.querySelector('.box:not(.line-style)');
         if (storageBox) {
             storageBox.style.display = "none";
@@ -226,12 +186,9 @@ myGamesButton.addEventListener("click", function() {
     } else {
         myGamesButton.textContent = "ئەو یاریانەی دیاریکراون";
         myGamesButton.style.background = "#00d9ff";
-        
-        // Reset clear button to original text
         clearButton.textContent = "لابردنی یاریە دیاریکراوەکان";
         clearButton.style.background = "#00d9ff";
         
-        // Show storage box again
         const storageBox = document.querySelector('.box:not(.line-style)');
         if (storageBox) {
             storageBox.style.display = "block";
@@ -239,7 +196,6 @@ myGamesButton.addEventListener("click", function() {
     }
 
     renderGames();
-
 });
 
 // Initial render
